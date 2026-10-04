@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-sapphire-night: #080e1e;
+    --color-sapphire-deep: #0c182f;
+    --color-sapphire-navy: #122347;
+    --color-gold-imperial: #c8a45d;
+    --color-gold-champagne: #d4af37;
+    --color-gold-light: #e8cf82;
+    --color-marble-white: #fffdf7;
+    --color-marble-ivory: #f4efe6;
+    --color-marble-muted: #8e9aaf;
+
+    --font-serif: "Cinzel", "Cormorant Garamond", Georgia, serif;
+    --font-editorial: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-sapphire-night);
+    color: var(--color-marble-white);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: 0.035em;
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+}
+
+/* Luxury Boutique Palette Utilities */
+.bg-sapphire-night {
+  background-color: #080e1e;
+}
+
+.bg-sapphire-deep {
+  background-color: #0c182f;
+}
+
+.bg-sapphire-navy {
+  background-color: #122347;
+}
+
+.bg-marble-white {
+  background-color: #fffdf7;
+}
+
+.bg-marble-ivory {
+  background-color: #f4efe6;
+}
+
+.text-gold-imperial {
+  color: #c8a45d;
+}
+
+.text-gold-champagne {
+  color: #d4af37;
+}
+
+.text-gold-light {
+  color: #e8cf82;
+}
+
+.text-marble-white {
+  color: #fffdf7;
+}
+
+.text-marble-ivory {
+  color: #f4efe6;
+}
+
+.text-sapphire-night {
+  color: #080e1e;
+}
+
+.text-sapphire-deep {
+  color: #0c182f;
+}
+
+.text-marble-muted {
+  color: #8e9aaf;
+}
+
+.border-gold-subtle {
+  border-color: rgba(200, 164, 93, 0.28);
+}
+
+.border-gold-medium {
+  border-color: rgba(200, 164, 93, 0.48);
+}
+
+.border-gold-bright {
+  border-color: #c8a45d;
+}
+
+.border-sapphire-subtle {
+  border-color: rgba(18, 35, 71, 0.35);
+}
+
+/* Luxury button shine animation */
+.luxury-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-btn-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+}
+
+.luxury-btn-shine:hover::after {
+  left: 100%;
+}
+
+/* Scroll indicator vertical pulse */
+@keyframes scrollLineMove {
+  0% {
+    transform: translateY(0);
+    opacity: 0.2;
+    height: 4px;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+    height: 16px;
+  }
+  100% {
+    transform: translateY(22px);
+    opacity: 0;
+    height: 4px;
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLineMove 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Shimmer Gold Glow */
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(200, 164, 93, 0.28);
+}
+
+.gold-glow-subtle {
+  box-shadow: 0 10px 40px -10px rgba(200, 164, 93, 0.18);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
